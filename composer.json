@@ -4,8 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": "src/",
-            "SymfonyStandard\\": "app/SymfonyStandard/"
+            "": "src/"
         }
     },
     "require": {
@@ -21,17 +20,13 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
 
-        "jms/di-extra-bundle": "@stable",
-        "gedmo/doctrine-extensions": "@stable",
-        "friendsofsymfony/jsrouting-bundle": "@stable"
+        "jms/di-extra-bundle": "~1.5",
+        "gedmo/doctrine-extensions": "~2.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
     },
     "scripts": {
-        "post-root-package-install": [
-            "SymfonyStandard\\Composer::hookRootPackageInstall"
-        ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
