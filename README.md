@@ -1,4 +1,6 @@
 symfony-webpack-react
 ======================
 
-A Symfony project created on June 13, 2015, 2:47 pm.
+1. `./install.sh`
+2. `npm start`
+3. Browse `/app_dev.php/app/example`
