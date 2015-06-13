@@ -7,7 +7,7 @@ var Router = require('react-router');
 var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
 
 var routes = (
-    <Route handler={App} path="/app_dev.php/app/example">
+    <Route handler={App} path="/app_dev.php/">
         <DefaultRoute name="index" handler={Index}/>
         <Route name="page" path="page" handler={Page}/>
         <NotFoundRoute handler={RouteNotFound}/>
