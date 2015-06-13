@@ -1,4 +1,4 @@
-symfony-webpack-react2
+symfony-webpack-react
 ======================
 
 A Symfony project created on June 13, 2015, 2:47 pm.
