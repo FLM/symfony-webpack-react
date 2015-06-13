@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% if app.environment == 'dev' %}
+                <script src="http://127.0.0.1:3000/static/bundle.js"></script>
+            {% else %}
+
+            {% endif %}
+        {% endblock %}
+    </body>
+</html>
