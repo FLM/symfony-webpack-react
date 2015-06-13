@@ -1,10 +1,6 @@
 {
-  "name": "snaptrack",
-  "version": "0.0.0",
-  "authors": [
-    "Olcay <olcay@konuskan.se>"
-  ],
-  "license": "MIT",
+  "name": "symfony-webpack-react",
+  "version": "0.0.1",
   "ignore": [
     "**/.*",
     "node_modules",
