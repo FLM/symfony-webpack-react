@@ -6,4 +6,4 @@ var Index = React.createClass({
     }
 });
 
-module.exports = Index;
+export default Index;

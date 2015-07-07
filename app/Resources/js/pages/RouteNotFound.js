@@ -6,4 +6,4 @@ var RouteNotFound = React.createClass({
     }
 });
 
-module.exports = RouteNotFound;
+export default RouteNotFound;

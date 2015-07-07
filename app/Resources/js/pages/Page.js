@@ -6,4 +6,4 @@ var Page = React.createClass({
     }
 });
 
-module.exports = Page;
+export default Page;
