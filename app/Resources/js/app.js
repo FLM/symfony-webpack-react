@@ -1,10 +1,9 @@
 import React from 'react';
-var App = require('./components/App');
-var Index = require('./components/Index');
-var Page = require('./components/Page');
-var RouteNotFound = require('./components/RouteNotFound');
-var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
+import App from 'local/components/App';
+import Index from 'local/pages/Index';
+import Page from 'local/pages/Page';
+import RouteNotFound from 'local/pages/RouteNotFound';
+import Router, { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } from 'react-router';
 
 var routes = (
     <Route handler={App} path="/app_dev.php/">

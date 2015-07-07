@@ -1,8 +1,6 @@
 import React from 'react';
-import Index from './Index';
-import Tab from './Tab';
-var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
+import Tab from 'local/components/Tab';
+import Router, { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } from 'react-router';
 
 var App = React.createClass({
     getInitialState: function () {
@@ -23,4 +21,4 @@ var App = React.createClass({
     }
 });
 
-module.exports = App;
+export default App;

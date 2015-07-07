@@ -1,6 +1,5 @@
 import React from 'react';
-var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
+import Router, { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } from 'react-router';
 
 var Tab = React.createClass({
     contextTypes: {
@@ -13,4 +12,4 @@ var Tab = React.createClass({
     }
 });
 
-module.exports = Tab;
+export default Tab;
