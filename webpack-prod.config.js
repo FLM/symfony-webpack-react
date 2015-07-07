@@ -1,12 +1,13 @@
+// Example usage when preparing deploy:
+// node_modules/.bin/webpack --config webpack-prod.config.js --progress --profile --colors
+
 var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'eval-source-maps',
+    debug: false,
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:3000',
-        'webpack/hot/only-dev-server',
-        './app/Resources/js/app.js',
+        './app/Resources/js/app.js'
     ],
     output: {
         path: path.join(__dirname, 'web/dist'),
@@ -14,13 +15,23 @@ module.exports = {
         publicPath: 'http://127.0.0.1:3000/static/'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            }
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
+        new webpack.NoErrorsPlugin()
     ],
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -33,7 +44,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 include: path.join(__dirname, 'app/Resources/js'),
-                loader: 'react-hot!babel'
+                loader: 'babel'
             },
             {
                 test: /\.css$/, // Only .css files
