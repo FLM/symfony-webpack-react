@@ -1,6 +1,7 @@
 {
   "name": "symfony-webpack-react",
-  "version": "2.0.0",
+  "description": "Symfony Webpack React Edition",
+  "version": "2.0.1",
   "dependencies": {
     "autoprefixer": "6.3.3",
     "babel-core": "6.5.2",
