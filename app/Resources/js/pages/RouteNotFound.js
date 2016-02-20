@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-var RouteNotFound = React.createClass({
-    render: function () {
-        return <p><b>404</b> File not found!</p>;
-    }
-});
-
-export default RouteNotFound;
+export default class RouteNotFound extends Component {
+  render() {
+    return <p><b>404</b> File not found!</p>;
+  }
+}

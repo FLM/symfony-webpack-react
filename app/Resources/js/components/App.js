@@ -1,24 +1,23 @@
-import React from 'react';
-import Tab from 'local/components/Tab';
-import Router, { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } from 'react-router';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
-var App = React.createClass({
-    getInitialState: function () {
-        return { };
-    },
-    render: function () {
-        return (
-            <div className="app">
-                <ul className="nav nav-tabs">
-                    <Tab route="index" text="Index"/>
-                    <Tab route="page" text="Example page"/>
-                </ul>
-                <div className="container">
-                    <RouteHandler/>
-                </div>
-            </div>
-        );
-    }
-});
+export default class App extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+  render() {
+    const { children } = this.props;
 
-export default App;
+    return (
+      <div className="app">
+        <ul className="nav nav-tabs">
+          <Link to="/">Index</Link>
+          <Link to="page">Example page</Link>
+        </ul>
+        <div className="container">
+          {children}
+        </div>
+      </div>
+    );
+  }
+}

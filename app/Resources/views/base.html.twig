@@ -2,20 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Hello world!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
             {% if app.environment == 'dev' %}
-                <script src="http://127.0.0.1:3000/static/bundle.js"></script>
+                <script src="http://127.0.0.1:3100/static/client.js"></script>
             {% else %}
-                <script src="{{ asset('dist/bundle.js') }}"></script>
+                <link rel="stylesheet" type="text/css" href="{{ asset('dist/client.css') }}">
+                <script src="{{ asset('dist/client.js') }}"></script>
             {% endif %}
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         {% endblock %}
     </body>
 </html>

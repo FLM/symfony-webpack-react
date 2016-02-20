@@ -1,0 +1,46 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "rules": {
+    "max-len": 0,
+    "jsx-control-statements/jsx-choose-not-empty": 1,
+    "jsx-control-statements/jsx-for-require-each": 1,
+    "jsx-control-statements/jsx-for-require-index": 1,
+    "jsx-control-statements/jsx-for-require-of": 1,
+    "jsx-control-statements/jsx-for-single-child": 1,
+    "jsx-control-statements/jsx-if-require-condition": 1,
+    "jsx-control-statements/jsx-if-single-child": 1,
+    "jsx-control-statements/jsx-otherwise-once-last": 1,
+    "jsx-control-statements/jsx-use-if-tag": 1,
+    "jsx-control-statements/jsx-when-require-condition": 1
+  },
+  "plugins": [
+    "react",
+    "import",
+    "jsx-control-statements"
+  ],
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "moduleDirectory": [
+        "node_modules",
+        "app/Resources/client"
+      ]
+    }
+  },
+  "globals": {
+    "__GLOBALS__": true,
+    "logger": true,
+    "If": true,
+    "Else": true,
+    "For": true,
+    "Choose": true,
+    "When": true,
+    "Otherwise": true
+  }
+}

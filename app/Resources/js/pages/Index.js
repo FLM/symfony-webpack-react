@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-var Index = React.createClass({
-    render: function () {
-        return <p>Welcome!</p>;
-    }
-});
-
-export default Index;
+export default class Index extends Component {
+  render() {
+    return <p>Index</p>;
+  }
+}

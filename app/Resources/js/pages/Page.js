@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-var Page = React.createClass({
-    render: function () {
-        return <p>Example page!</p>;
-    }
-});
-
-export default Page;
+export default class Page extends Component {
+  render() {
+    return <p>Example page</p>;
+  }
+}

@@ -1,18 +1,44 @@
 import React from 'react';
-import App from 'local/components/App';
-import Index from 'local/pages/Index';
-import Page from 'local/pages/Page';
-import RouteNotFound from 'local/pages/RouteNotFound';
-import Router, { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } from 'react-router';
+import ReactDOM from 'react-dom';
+import App from 'components/App';
+import Index from 'pages/Index';
+import Page from 'pages/Page';
+import RouteNotFound from 'pages/RouteNotFound';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
+import { syncHistory, routeReducer } from 'react-router-redux';
+import reducers from 'store/reducers';
+import { createHistory } from 'history';
 
-var routes = (
-    <Route handler={App} path="/app_dev.php/">
-        <DefaultRoute name="index" handler={Index}/>
-        <Route name="page" path="page" handler={Page}/>
-        <NotFoundRoute handler={RouteNotFound}/>
-    </Route>
-);
+const basePath = (__GLOBALS__.dev ? '/app_dev.php' : '');
 
-Router.run(routes, Router.HistoryLocation, function (Handler) {
-    React.render(<Handler/>, document.getElementById('app'));
+const reducer = combineReducers(Object.assign({}, reducers, {
+  routing: routeReducer,
+}));
+
+const browserHistory = useRouterHistory(createHistory)({
+  basename: basePath,
 });
+
+// Sync dispatched route actions to the history
+const reduxRouterMiddleware = syncHistory(browserHistory);
+const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware)(createStore);
+
+const store = createStoreWithMiddleware(reducer);
+
+// Required for replaying actions from devtools to work
+reduxRouterMiddleware.listenForReplays(store);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Index} />
+        <Route path="page" component={Page} />
+        <Route path="404" component={RouteNotFound} />
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById('app')
+);
