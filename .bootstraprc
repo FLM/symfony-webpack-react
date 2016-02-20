@@ -12,13 +12,13 @@ styleLoaders:
   - sass
 
 # Customize Bootstrap variables that get imported before the original Bootstrap variables.
-preBootstrapCustomizations: app/Resources/js/style/variables.scss
+preBootstrapCustomizations: app/Resources/js/css/variables.scss
 
 # This gets loaded after bootstrap/variables is loaded
 #bootstrapCustomizations: app/Resources/client/theme/bootstrap.variables.scss
 
 # Import your custom styles here
-appStyles: app/Resources/js/style/app.scss
+appStyles: app/Resources/js/css/app.scss
 
 ### Bootstrap styles
 styles:

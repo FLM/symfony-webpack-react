@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'components/App';
+import App from 'pages/App';
 import Index from 'pages/Index';
 import Page from 'pages/Page';
 import RouteNotFound from 'pages/RouteNotFound';
