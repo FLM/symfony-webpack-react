@@ -1,17 +1,23 @@
-symfony-webpack-react
-======================
+# Symfony Webpack React Edition
+Project boilerplate for a Symfony Standard application using React on the frontend.
 
-Features
---------
-- Symfony
-- Webpack with babel-loader
-- React with hot loading
+## What's inside?
 
-Install
--------
+- Everything included in [Symfony Standard Edition 3.x](https://github.com/symfony/symfony-standard/#whats-inside)
+- [JMSDiExtraBundle](http://jmsyst.com/bundles/JMSDiExtraBundle)
+- [Webpack 2](https://www.npmjs.com/package/webpack) with [Babel 6](https://babeljs.io/)
+- [React](https://facebook.github.io/react/) with component hot loading
+- [Redux](http://redux.js.org/)
 
-1. `composer install`
-2. `npm install`
-3. `npm start`
-4. Configure your web server of choice
-5. Browse `/app_dev.php/`
+## Installation
+
+1. `composer create-project flm/symfony-webpack-react myproject`
+2. `cd myproject`
+3. `npm install`
+4. `npm start`
+5. Configure your web server of choice to point at `myproject/web`
+6. Browse `/app_dev.php/`
+
+## Production build
+
+    npm run-script build
