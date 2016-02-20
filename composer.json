@@ -1,7 +1,8 @@
 {
-    "name": "FLM/symfony-webpack-react",
+    "name": "flm/symfony-webpack-react",
     "license": "MIT",
     "type": "project",
+    "description": "The \"Symfony Webpack React Edition\" distribution",
     "autoload": {
         "psr-4": { "": "src/" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
