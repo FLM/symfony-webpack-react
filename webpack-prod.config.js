@@ -1,10 +1,10 @@
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
-var getStyleLoader = function(preProcessor, includeStyleLoader) {
+const getStyleLoader = function(preProcessor, includeStyleLoader) {
   includeStyleLoader = (includeStyleLoader !== false);
 
   return (includeStyleLoader ? 'style-loader!' : '') +
@@ -15,7 +15,7 @@ var getStyleLoader = function(preProcessor, includeStyleLoader) {
     '!postcss-loader' +
     '!' + preProcessor
     ;
-}
+};
 
 module.exports = {
   //eslint config options. Part of the eslint-loader package
@@ -55,9 +55,6 @@ module.exports = {
 
     // Configure path for served CSS files ("desktop_css" will be served as /dist/desktop_css.css)
     new ExtractTextPlugin('[name].css'),
-
-    // Ignore unused moment locales
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /sv/),
   ],
   resolve: {
     modules: [
@@ -79,12 +76,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'stage-0', 'react'],
           plugins: [
-            [
-              'provide-modules', {
-              'helpers/logger': 'logger',
-              'jquery': '$',
-            }
-            ],
+            ['provide-modules', {
+                'helpers/logger': 'logger',
+                'jquery': '$',
+            }],
             'jsx-control-statements',
             'transform-decorators-legacy',
             'transform-inline-environment-variables',

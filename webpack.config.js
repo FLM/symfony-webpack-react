@@ -1,16 +1,16 @@
-var fs = require('fs');
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
-var parameters = {
+const parameters = {
   server: '127.0.0.1',
   port: 3100,
 };
 
-var hotLoaderClient = 'webpack-hot-middleware/client?path=http://' + parameters['server'] + ':' + parameters['port'] + '/__webpack_hmr';
+const hotLoaderClient = 'webpack-hot-middleware/client?path=http://' + parameters['server'] + ':' + parameters['port'] + '/__webpack_hmr';
 
-var getStyleLoader = function(preProcessor) {
+const getStyleLoader = function(preProcessor) {
   return 'style!' +
     'css?' + // CSS-LOADER
     'modules&' + // ---> <enables Local scoped CSS by default
@@ -22,7 +22,7 @@ var getStyleLoader = function(preProcessor) {
     'outputStyle=expanded&' +
     'sourceMap'
     ;
-}
+};
 
 module.exports = {
   //eslint config options. Part of the eslint-loader package
@@ -62,9 +62,6 @@ module.exports = {
       '__GLOBALS__.dev': 'true',
       '__GLOBALS__.prod': 'false',
     }),
-
-    // Ignore unused moment locales
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /sv/),
   ],
   resolve: {
     modules: [
@@ -86,12 +83,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'stage-0', 'react', 'react-hmre'],
           plugins: [
-            [
-              'provide-modules', {
-              'helpers/logger': 'logger',
-              'jquery': '$',
-            }
-            ],
+            ['provide-modules', {
+                'helpers/logger': 'logger',
+                'jquery': '$',
+            }],
             'jsx-control-statements',
             'transform-decorators-legacy',
             'transform-inline-environment-variables',
