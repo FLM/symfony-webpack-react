@@ -29,7 +29,7 @@
     "import/resolve": {
       "moduleDirectory": [
         "node_modules",
-        "app/Resources/client"
+        "app/Resources/js"
       ]
     }
   },
