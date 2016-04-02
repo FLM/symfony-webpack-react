@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ExampleComponent from 'components/ExampleComponent';
 
-export default class Page extends Component {
-  render() {
-    return <p>Example page</p>;
-  }
-}
+export default () => (
+  <p>
+    Example page
+    <ExampleComponent />
+  </p>
+);

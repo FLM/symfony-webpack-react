@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-var BitBarWebpackStatusPlugin = require('bitbar-webpack-status-plugin');
 
 var parameters = {
   server: '127.0.0.1',
@@ -45,8 +44,6 @@ module.exports = {
     publicPath: 'http://' + parameters['server'] + ':' + parameters['port'] + '/static/'
   },
   plugins: [
-    new BitBarWebpackStatusPlugin(),
-
     // Hot reload CSS/JS in development environment
     new webpack.HotModuleReplacementPlugin(),
 

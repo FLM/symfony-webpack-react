@@ -3,3 +3,12 @@
 {% block body %}
     <div id="app"></div>
 {% endblock %}
+
+{% block javascripts %}
+    {% if app.environment == 'dev' %}
+        <script src="http://127.0.0.1:3100/static/client.js"></script>
+    {% else %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('dist/client.css') }}">
+        <script src="{{ asset('dist/client.js') }}"></script>
+    {% endif %}
+{% endblock %}
