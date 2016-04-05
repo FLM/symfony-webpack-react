@@ -1,13 +1,16 @@
 security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
 
     providers:
-        in_memory:
-            memory: ~
-
+        fos_userbundle:
+            id: fos_user.user_provider.username        # fos_user.user_provider.username_email does not seem to work (OAuth-spec related ("username + password") ?)
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+        oauth_token:                                   # Everyone can access the access token URL.
+            pattern: ^/oauth/v2/token
             security: false
-
-        main:
-            anonymous: ~
+        api:
+            pattern: ^/                                # All URLs are protected
+            fos_oauth: true                            # OAuth2 protected resource
+            stateless: true                           # Do no set session cookies
+            anonymous: false                           # Anonymous access is not allowed
