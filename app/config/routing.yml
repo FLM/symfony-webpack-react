@@ -9,6 +9,10 @@ NelmioApiDocBundle:
 fos_oauth_server_token:
     resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
 
+api_doc:
+    resource: "@ApiBundle/Controller/OauthController.php"
+    type: rest
+
 fallback:
     path: /{url}
     defaults: { _controller: AppBundle:Default:index, url: null }

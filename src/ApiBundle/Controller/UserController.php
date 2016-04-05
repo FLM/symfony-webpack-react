@@ -9,13 +9,23 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class UserController extends FOSRestController
 {
     /**
-     * @Security(expression="is_authenticated()")
-     * @ApiDoc(description="A test action")
+     * @ApiDoc()
      */
     public function getUserAction()
     {
         return array(
             "user" => $this->getUser(),
+        );
+    }
+
+    /**
+     * @Security(expression="is_authenticated()")
+     * @ApiDoc()
+     */
+    public function getProtectedStuffAction()
+    {
+        return array(
+            "secret" => "You need to be authenticated to reach this data",
         );
     }
 }

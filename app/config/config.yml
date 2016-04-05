@@ -72,7 +72,12 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
 
-nelmio_api_doc: ~
+nelmio_api_doc:
+    name: API Documentation
+    sandbox:
+        authentication:
+            delivery: http
+            type:     bearer
 
 fos_rest:
     view:
@@ -88,7 +93,7 @@ fos_rest:
 
 fos_user:
     db_driver: orm
-    firewall_name: api                                  # Seems to be used when registering user/reseting password,
+    firewall_name: main                                  # Seems to be used when registering user/reseting password,
                                                         # but since there is no "login", as so it seems to be useless in
                                                         # our particular context, but still required by "FOSUserBundle"
     user_class: AppBundle\Entity\User
