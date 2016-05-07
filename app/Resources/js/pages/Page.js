@@ -2,9 +2,8 @@ import React from 'react';
 import ExampleComponent from 'components/ExampleComponent';
 
 export default () => (
-  <span>
-    Example page
-    <br />
+  <div>
+    <h1>Example page</h1>
     <ExampleComponent />
-  </span>
+  </div>
 );

@@ -1,8 +1,9 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+import myHistory from 'router/myHistory';
 import reducers from 'store/reducers';
 
-const middlewares = [];
+const middlewares = [routerMiddleware(myHistory)];
 if (__GLOBALS__.dev) {
   const createLogger = require('redux-logger');
   const logger = createLogger();
