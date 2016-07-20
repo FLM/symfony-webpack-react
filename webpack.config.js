@@ -133,19 +133,9 @@ module.exports = {
         loader: getStyleLoader('sass')
       },
 
-      // Embed gifs as data-uris if less than a certain size
+      // Embed images as data-uris if less than a certain size
       {
-        test: /\.(gif)(\?v=.*)?$/, loader: 'url-loader?limit=8192&minetype=image/gif'
-      },
-
-      // Embed pngs as data-uris if less than a certain size
-      {
-        test: /\.(png)(\?v=.*)?$/, loader: 'url-loader?limit=8192&minetype=image/png'
-      },
-
-      // Embed jpgs as data-uris if less than a certain size
-      {
-        test: /\.(jpeg|jpg)(\?v=.*)?$/, loader: 'url-loader?limit=8192&minetype=image/jpeg'
+        test: /\.(gif|png|jpg|jpeg)(\?v=.*)?$/, loader: 'url-loader?limit=8192'
       },
 
       // Use file-loader for fonts
