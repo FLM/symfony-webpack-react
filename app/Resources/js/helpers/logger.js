@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable max-len */
 const logger = {
   log: function log(...args) {
     if (__GLOBALS__.dev) {

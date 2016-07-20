@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'react-bootstrap';
-import styles from 'css/App.scss';
+import styles from './css/App.scss';
 
 const App = ({ children }) => (
   <div className={styles.app}>

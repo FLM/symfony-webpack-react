@@ -64,9 +64,19 @@ module.exports = {
     }),
   ],
   resolve: {
+    // This setting is not used by Webpack 2.x, but is required for eslint until it has support for `modules`
+    root: [
+      path.resolve(__dirname, 'app/Resources/js'),
+    ],
+    // This setting is not used by Webpack 2.x, but is required for eslint until it has support for `modules`
+    moduleDirectories: [
+      path.resolve(__dirname, 'app/Resources/js'),
+      path.resolve(__dirname, 'node_modules'),
+      '.',
+    ],
     modules: [
-      'app/Resources/js',
-      'node_modules',
+      path.resolve(__dirname, 'app/Resources/js'),
+      path.resolve(__dirname, 'node_modules'),
       '.',
     ],
     extensions: ['', '.js', '.jsx'],

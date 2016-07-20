@@ -1,23 +1,14 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:jsx-control-statements/recommended"
+  ],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true
-  },
-  "rules": {
-    "max-len": 0,
-    "jsx-control-statements/jsx-choose-not-empty": 1,
-    "jsx-control-statements/jsx-for-require-each": 1,
-    "jsx-control-statements/jsx-for-require-index": 1,
-    "jsx-control-statements/jsx-for-require-of": 1,
-    "jsx-control-statements/jsx-for-single-child": 1,
-    "jsx-control-statements/jsx-if-require-condition": 1,
-    "jsx-control-statements/jsx-if-single-child": 1,
-    "jsx-control-statements/jsx-otherwise-once-last": 1,
-    "jsx-control-statements/jsx-use-if-tag": 1,
-    "jsx-control-statements/jsx-when-require-condition": 1
+    "jquery": true,
+    "jsx-control-statements/jsx-control-statements": true
   },
   "plugins": [
     "react",
@@ -25,22 +16,16 @@
     "jsx-control-statements"
   ],
   "settings": {
-    "import/parser": "babel-eslint",
-    "import/resolve": {
-      "moduleDirectory": [
-        "node_modules",
-        "app/Resources/js"
-      ]
-    }
+    "react": {
+      "pragma": "React",
+      "version": "0.15.2"
+    },
+    "import/resolver": "webpack",
+    "import/parser": "babel-eslint"
   },
   "globals": {
     "__GLOBALS__": true,
-    "logger": true,
-    "If": true,
-    "Else": true,
-    "For": true,
-    "Choose": true,
-    "When": true,
-    "Otherwise": true
+    "dispatch": true,
+    "logger": true
   }
 }
