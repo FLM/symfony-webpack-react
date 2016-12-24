@@ -102,19 +102,19 @@ module.exports = {
       // - ExtractTextPlugin serves the result as CSS instead of JS
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' })
       },
 
       // Use magic CSS loader for certain less files
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', getStyleLoader('less', false))
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: getStyleLoader('less', false) })
       },
 
       // Use magic CSS loader for certain scss files
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', getStyleLoader('sass', false))
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: getStyleLoader('sass', false) })
       },
 
       // Embed images as data-uris if less than a certain size
