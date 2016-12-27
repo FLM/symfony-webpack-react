@@ -7,6 +7,8 @@ import { createHistory } from 'history';
 import createStore from 'store/createStore';
 import routes from 'router/routes';
 
+global.fetch = fetch;
+
 const basePath = (__GLOBALS__.dev ? '/app_dev.php' : '');
 const history = useRouterHistory(createHistory)({
   basename: basePath,
