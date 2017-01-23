@@ -24,7 +24,7 @@
 
         "jms/di-extra-bundle": "~1.7",
         "doctrine/doctrine-migrations-bundle": "^1.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/user-bundle": "^2.0@beta",
         "friendsofsymfony/rest-bundle": "^1.7",
         "jms/serializer-bundle": "^1.1",
         "nelmio/api-doc-bundle": "^2.12",
